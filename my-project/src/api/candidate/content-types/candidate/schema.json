@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "candidates",
+  "info": {
+    "singularName": "candidate",
+    "pluralName": "candidates",
+    "displayName": "Candidates",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Email": {
+      "type": "email",
+      "unique": true
+    },
+    "Resume": {
+      "type": "text"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Position_Applied_For": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::vacancy.vacancy",
+      "mappedBy": "candidate"
+    }
+  }
+}
